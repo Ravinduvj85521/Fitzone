@@ -1,0 +1,171 @@
+/* assets/css/trainers.css */
+
+:root {
+  --primary: #3a86ff;
+  --primary-dark: #2667cc;
+  --danger: #f72585;
+  --success: #4cc9f0;
+  --warning: #f8961e;
+  --dark: #212529;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+.trainers-section {
+  padding: 3rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+.trainers-section h1 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  color: var(--dark);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.trainers-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Trainer Grid Layout */
+.trainer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Trainer Card Styles */
+.trainer-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.trainer-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.trainer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.trainer-card:hover .trainer-image img {
+  transform: scale(1.05);
+}
+
+.trainer-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.trainer-info h3 {
+  margin: 0 0 0.5rem;
+  color: var(--dark);
+  font-size: 1.4rem;
+}
+
+.specialization {
+  color: var(--primary);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.certification {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.bio {
+  color: var(--dark);
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .trainer-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .trainers-section h1 {
+    font-size: 2rem;
+  }
+  
+  .trainer-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.trainer-card {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+.trainer-card:nth-child(1) { animation-delay: 0.1s; }
+.trainer-card:nth-child(2) { animation-delay: 0.2s; }
+.trainer-card:nth-child(3) { animation-delay: 0.3s; }
+.trainer-card:nth-child(4) { animation-delay: 0.4s; }
+/* Add more as needed */
+
+/* Fallback for missing images */
+.trainer-image {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .trainer-image:before {
+  content: "Trainer Photo";
+  color: var(--gray);
+  font-weight: 500;
+} */

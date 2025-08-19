@@ -1,0 +1,112 @@
+/* Member Container Layout */
+.member-container {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    /* background-color: #27ae60; */
+}
+
+
+/* Main Content Area */
+.member-content {
+     padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    /* margin: 0 auto; */
+    
+}
+
+.member-content h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Class Grid Layout */
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Class Card Styles */
+.class-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.class-card h3 {
+    color: #3498db;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.class-card p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.class-card p strong {
+    color: #2c3e50;
+}
+
+/* Button Styles */
+.book-class {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.book-class:hover {
+    background-color: #2980b9;
+}
+
+.book-class:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .member-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    .class-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Status Indicators */
+.spots-available {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.spots-full {
+    color: #e74c3c;
+    font-weight: bold;
+}
