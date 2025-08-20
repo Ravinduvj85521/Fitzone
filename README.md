@@ -41,12 +41,11 @@ To run this project locally:
 3.  Setup Database:
     *   Create a MySQL database named `fitzone`.
     *   Open the database_tables.txt file, copy all its contents, and paste it into the SQL command window of your database tool to run it
-);
 4.  Configure Connection:
     *   Update the database credentials in `includes/config.php` with your local MySQL username and password.
 5.  Run the Application:
     *   Move the project folder to your web server's root directory (e.g., `htdocs` for XAMPP).
-    *   Open your browser and navigate to `http://localhost/fitzone-fitness`.
+    *   Open your browser and navigate to `http://localhost/fitzone`.
 
 📁 Project Structure
 
