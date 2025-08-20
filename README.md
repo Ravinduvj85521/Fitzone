@@ -50,52 +50,55 @@ To run this project locally:
 
 📁 Project Structure
 
-fitzone/
-├── assets/
-│   ├── css/
-│   │   ├── style.css (main styles)
-│   │   ├── dashboard.css
-│   │   └── classes.css
-│   ├── js/
-│   │   ├── main.js (common functions)
-│   │   ├── booking.js
-│   │   └── validation.js
-│   └── images/ (all website images)
-│
-├── includes/
-│   ├── config.php (database connection)
-│   ├── header.php
-│   ├── footer.php
-│   ├── auth.php (authentication functions)
-│   └── functions.php (helper functions)
-│
-├── api/ (all AJAX endpoints)
-│   ├── get_classes.php
-│   ├── book_class.php
-│   └── check_availability.php
-│
-├── admin/ (admin panel)
-│   ├── dashboard.php
-│   ├── members.php
-│   ├── classes.php
-│   └── trainers.php
-│
-├── members/ (user portal)
-│   ├── dashboard.php
-│   ├── booking.php
-│   ├── profile.php
-│   └── payments.php
-│
-├── index.php (homepage)
-├── about.php
-├── classes.php
-├── trainers.php
-├── membership.php
-├── blog.php
-├── contact.php
-├── login.php
-├── register.php
-└── 404.php
+# Fitzone Project Structure
+
+📂 fitzone/  
+├── 📂 assets/  
+│   ├── 📂 css/  
+│   │   ├── 📄 style.css (main styles)  
+│   │   ├── 📄 dashboard.css  
+│   │   └── 📄 classes.css  
+│   ├── 📂 js/  
+│   │   ├── 📄 main.js (common functions)  
+│   │   ├── 📄 booking.js  
+│   │   └── 📄 validation.js  
+│   └── 📂 images/ (all website images)  
+│  
+├── 📂 includes/  
+│   ├── 📄 config.php (database connection)  
+│   ├── 📄 header.php  
+│   ├── 📄 footer.php  
+│   ├── 📄 auth.php (authentication functions)  
+│   └── 📄 functions.php (helper functions)  
+│  
+├── 📂 api/ (all AJAX endpoints)  
+│   ├── 📄 get_classes.php  
+│   ├── 📄 book_class.php  
+│   └── 📄 check_availability.php  
+│  
+├── 📂 admin/ (admin panel)  
+│   ├── 📄 dashboard.php  
+│   ├── 📄 members.php  
+│   ├── 📄 classes.php  
+│   └── 📄 trainers.php  
+│  
+├── 📂 members/ (user portal)  
+│   ├── 📄 dashboard.php  
+│   ├── 📄 booking.php  
+│   ├── 📄 profile.php  
+│   └── 📄 payments.php  
+│  
+├── 📄 index.php (homepage)  
+├── 📄 about.php  
+├── 📄 classes.php  
+├── 📄 trainers.php  
+├── 📄 membership.php  
+├── 📄 blog.php  
+├── 📄 contact.php  
+├── 📄 login.php  
+├── 📄 register.php  
+└── 📄 404.php  
+
 
 👥 Default Login Credentials
 
