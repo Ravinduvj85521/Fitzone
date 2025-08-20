@@ -1,0 +1,70 @@
+-- Members Table
+CREATE TABLE members (
+    member_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    phone VARCHAR(15),
+    address TEXT,
+    join_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    membership_type ENUM('basic', 'premium', 'vip') DEFAULT 'basic',
+    profile_pic VARCHAR(255)
+);
+
+-- Trainers Table
+CREATE TABLE trainers (
+    trainer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    specialization VARCHAR(100),
+    bio TEXT,
+    certification VARCHAR(100),
+    image VARCHAR(255)
+);
+
+-- Classes Table
+CREATE TABLE classes (
+    class_id INT AUTO_INCREMENT PRIMARY KEY,
+    class_name VARCHAR(50) NOT NULL,
+    description TEXT,
+    trainer_id INT,
+    class_type ENUM('yoga', 'cardio', 'strength', 'hiit'),
+    start_time DATETIME NOT NULL,
+    end_time DATETIME NOT NULL,
+    max_capacity INT DEFAULT 20,
+    current_bookings INT DEFAULT 0,
+    FOREIGN KEY (trainer_id) REFERENCES trainers(trainer_id) ON DELETE SET NULL
+);
+
+-- Bookings Table
+CREATE TABLE bookings (
+    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    member_id INT,
+    class_id INT,
+    booking_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('confirmed', 'waitlisted', 'cancelled') DEFAULT 'confirmed',
+    FOREIGN KEY (member_id) REFERENCES members(member_id) ON DELETE CASCADE,
+    FOREIGN KEY (class_id) REFERENCES classes(class_id) ON DELETE CASCADE
+);
+
+-- Payments Table
+CREATE TABLE payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    member_id INT,
+    amount DECIMAL(10,2) NOT NULL,
+    payment_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    payment_method ENUM('cash', 'card', 'digital_wallet') DEFAULT 'card',
+    transaction_id VARCHAR(100),
+    FOREIGN KEY (member_id) REFERENCES members(member_id)
+);
+
+-- Blog Posts Table
+CREATE TABLE blog_posts (
+    post_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    author_id INT,
+    category ENUM('workouts', 'nutrition', 'success_stories') DEFAULT 'workouts',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    image_url VARCHAR(255),
+    FOREIGN KEY (author_id) REFERENCES trainers(trainer_id) ON DELETE SET NULL
+);
