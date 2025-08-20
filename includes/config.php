@@ -1,17 +1,10 @@
 <?php
-/**
- * FitZone Configuration File
- * Handles database connection and core configuration
- */
-
-// Verification constant (must be first)
 define('FITZONE_CONFIG_LOADED', true);
 
-// Error reporting (disable in production)
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Session Management
 if (session_status() === PHP_SESSION_NONE) {
     session_set_cookie_params([
         'lifetime' => 86400,
@@ -33,13 +26,11 @@ if (session_status() === PHP_SESSION_NONE) {
     }
 }
 
-// Database Configuration
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'fitzone');
 
-// Establish database connection
 try {
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     

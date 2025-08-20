@@ -1,11 +1,4 @@
 <?php
-/**
- * FitZone Helper Functions
- */
-
-/**
- * Get upcoming classes with optional limit
- */
 function getUpcomingClasses($limit = 3) {
     global $conn;
     
@@ -31,10 +24,6 @@ function getUpcomingClasses($limit = 3) {
         return false;
     }
 }
-
-/**
- * Get all trainers with optional specialization filter
- */
 function getTrainers($specialization = null) {
     global $conn;
     
@@ -55,18 +44,11 @@ function getTrainers($specialization = null) {
         return false;
     }
 }
-
-/**
- * Validate password strength
- */
 function validatePassword($password) {
     // Minimum 8 chars, at least 1 uppercase, 1 lowercase, 1 number
     return preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W]{8,}$/", $password);
 }
 
-/**
- * Send email notification with improved error handling
- */
 function sendNotification($email, $subject, $message) {
     try {
         $headers = "From: FitZone <no-reply@fitzone.lk>\r\n";

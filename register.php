@@ -93,6 +93,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<?php include 'includes/header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,29 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - FitZone</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .error-message {
-            color: #e74c3c;
-            font-size: 0.85rem;
-            margin-top: 0.25rem;
-            display: block;
-        }
-        .alert.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 0.75rem 1.25rem;
-            margin-bottom: 1rem;
-            border: 1px solid #f5c6cb;
-            border-radius: 0.25rem;
-        }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-text {
-            color: #6c757d;
-            font-size: 0.85rem;
-        }
-    </style>
+
 </head>
 <body>
 <div class="auth-container">
@@ -262,3 +242,5 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
 
 </body>
 </html>
+
+<?php include 'includes/footer.php'; ?>
